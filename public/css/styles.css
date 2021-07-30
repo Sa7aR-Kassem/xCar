@@ -1,0 +1,143 @@
+/* colours */
+:root {
+  --primary: #ffcf42;
+  --secondary: #c69131;
+  --title: #ff8816;
+}
+
+/* layout styles */
+nav a img {
+  max-width: 80px;
+  margin: 11px 0;
+}
+
+nav a span {
+  font-weight: bold;
+}
+nav .sidenav-trigger {
+  margin: 0;
+  color: var(--primary);
+}
+
+/* layout */
+.bgImg {
+  height: 100vh;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+.no-webp .bgImg {
+  background: url("../img/bg.png") center/cover no-repeat;
+}
+
+.webp .bgImg {
+  background: url("../img/bg.webp") center/cover no-repeat;
+}
+.bgImg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
+}
+
+.bgImg > * {
+  position: relative;
+  z-index: 9;
+}
+
+/* car styles */
+.card-panel.car {
+  border-radius: 8px;
+  border: 1px solid var(--secondary);
+  padding: 10px;
+  box-shadow: 0px 1px 3px rgba(90, 90, 90, 0.1);
+  display: grid;
+  grid-template-columns: 2fr 6fr 1fr;
+  grid-template-areas: "image details delete";
+  position: relative;
+  z-index: 9;
+}
+.car img {
+  grid-area: image;
+  max-width: 100px;
+}
+.car-details {
+  grid-area: details;
+  margin-left: 15px;
+}
+.car-delete {
+  grid-area: delete;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.car-delete i {
+  font-size: 18px;
+}
+.car-brand,
+.car-price span {
+  font-weight: bold;
+}
+.car-model,
+.car-price {
+  font-size: 0.8em;
+}
+
+.add-btn {
+  z-index: 9;
+}
+
+/* form-styles */
+.add-btn {
+  background: var(--primary) !important;
+}
+input {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+.side-form button {
+  background: var(--primary);
+  box-shadow: 1px 1px 3px rgba(90, 90, 90, 0.2);
+  color: #000;
+}
+form .input-field {
+  margin-top: 30px;
+}
+.file-field .file-path-wrapper {
+  padding: 0;
+}
+.file-path-wrapper .file-path, input, input::placeholder {
+  color: white;
+}
+.center {
+  margin: 1rem 0;
+}
+
+#locationResults {
+  display: none;
+}
+
+.btn-floating i {
+  color: #000;
+}

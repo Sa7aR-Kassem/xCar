@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XCar</title>
+  <meta name=description content="XZero Car">
+  <link rel="canonical" href="https://xzerocar.web.app" />
+  <!-- materialize icons, css & js -->
+  <link type="text/css" href="./css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet" >
+  <link type="text/css" href="./css/styles.css" rel="stylesheet">
+  <!-- manifest json -->
+  <link rel="manifest" href="./manifest.json">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="./img/icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#c69131">
+  <meta name="theme-color" content="#c69131">
+</head>
+
+<body class="black lighten-4">
+
+  <!-- top nav -->
+  <nav class="z-depth-0 black">
+    <div class="nav-wrapper container">
+      <a href="./index.html">
+        <picture>
+          <source srcset="./img/logo.webp" type="image/webp">
+          <source srcset="./img/logo.png" type="image/png">
+          <img src="./img/logo.png" alt="logo" width="80px" height="35px">
+        </picture>
+      </a>
+      <span class="right grey-text text-darken-1">
+        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+      </span>
+    </div>
+  </nav>
+
+  <!-- side nav -->
+  <ul id="side-menu" class="sidenav side-menu black">
+    <li><a class="subheader white-text" href="/">XZeroCar</a></li>
+    <li><a href="/" class="waves-effect white-text">Home</a></li>
+    <li><a href="/pages/about.html" class="waves-effect white-text">About</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a href="/pages/contact.html" class="waves-effect white-text">
+        <i class="material-icons white-text">mail_outline</i>Contact</a>
+    </li>
+  </ul>
+
+  <!-- cars -->
+  <div class="container bgImg grey-text text-darken-1">
+    <div class="cars ">
+
+    </div>
+    <div class="center">
+      <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form" href="#">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
+  </div>
+
+  <!-- add car side nav -->
+  <div id="side-form" class="sidenav side-form black">
+    <form class="add-car container section">
+      <h6 class="white-text">New car</h6>
+      <div class="divider"></div>
+      <div class="input-field">
+        <input placeholder="e.g. KIA" id="brand" type="text" class="validate">
+        <label for="brand">Brand</label>
+      </div>
+      <div class="input-field">
+        <input placeholder="e.g. Picanto" id="model" type="text" class="validate">
+        <label for="model">Model</label>
+      </div>
+      <div class="input-field">
+        <input placeholder="e.g. 200000" id="price" type="text" class="validate">
+        <label for="price">Price</label>
+      </div>
+      <div class="input-field file-field">
+        <input accept="image/x-png,image/jpeg,image/gif" id="image" onChange="upload()" caputre="camera" type="file">
+        <div class="file-path-wrapper">
+          <label for="imgVi"></label>
+          <input class="file-path validate" id="imgVi" type="text">
+        </div>
+        <label for="image" class="active">Image</label>
+      </div>
+      <div class="input-field center">
+        <button class="btn-small" id="addBtn">Add</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js" > </script>
+  <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDGV9_9GAVtRcKhB8NER9pXmI57odpEsKQ",
+      authDomain: "xzerocar.firebaseapp.com",
+      databaseURL: "https://xzerocar.firebaseio.com",
+      projectId: "xzerocar",
+      storageBucket: "xzerocar.appspot.com",
+      messagingSenderId: "523016179504",
+      appId: "1:523016179504:web:7a4925cfb10f0eab85c2f5",
+      measurementId: "G-KX5F8QH19C"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  
+  <script type="text/javascript" src="./js/materialize.min.js"></script>
+  <script src="./js/modernizr-custom.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/db.js"></script>
+  <script src="./js/ui.js"></script>
+</body>
+
+</html>
